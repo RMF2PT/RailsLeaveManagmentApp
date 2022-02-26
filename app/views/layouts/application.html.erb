@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<%# class h-100 to send the footer down %>
+<html class="h-100">
+  <head>
+    <title>Gestão de presenças</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <%# class d-felx e flex-column to send the footer down %>
+  <body class="d-flex flex-column h-100">
+    <%= render 'home/navbar' %>
+    <%# class flex-shrink-0 to send the footer down %>
+    <main class="flex-shrink-0"> 
+      <div class="container my-2">
+        <%= yield %>
+      </div>
+    </main>
+    <%= render 'home/footer' %>   
+  </body>
+</html>
