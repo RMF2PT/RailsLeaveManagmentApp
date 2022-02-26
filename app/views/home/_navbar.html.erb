@@ -1,9 +1,13 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Gestão de presenças</a>
+
+    <%= link_to "Gestão de presenças", root_path, class:"navbar-brand"%>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <%# Collapse items %>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -19,25 +23,59 @@
           <a class="nav-link" href="#">Calendário</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOther" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Gestão
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownOther">
             <li><a class="dropdown-item" href="#">Férias</a></li>
             <li><a class="dropdown-item" href="#">Escala</a></li>
             <li><a class="dropdown-item" href="#">Tardes Livres</a></li>
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
-        <button type="button" class="btn btn-primary me-2">
-          Notificações <span class="badge bg-secondary">4</span>
-        </button>
-      </form>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
-        <button class="btn btn-primary" type="submit">Procurar</button>
-      </form>
+    
+      <%# Notifications %>
+      <div>
+        <li class="d-flex nav-item dropdown me-2">
+          <a
+            class="nav-link dropdown-toggle text-reset hidden-arrow"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-bell-fill fs-4 text-light"></i>
+            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Férias para aprovar</a></li>
+            <li><a class="dropdown-item" href="#">Férias por marcar</a></li>
+            <li><a class="dropdown-item" href="#">Falta por aprovar</a></li>
+          </ul>
+        </li>
+      </div>
+
+      <%# User %>
+      <div>
+        <li class="d-flex nav-item dropdown me-2">
+          <a 
+            class="nav-link dropdown-toggle text-reset hidden-arrow" 
+            href="#" 
+            id="navbarDropdown" 
+            role="button" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false"
+          >
+            <<i class="bi bi-person-circle fs-4 text-light"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Editar perfil</a></li>
+            <li><a class="dropdown-item" href="#">Preferências</a></li>
+            <li><a class="dropdown-item" href="#">Sair</a></li>
+          </ul>
+        </li>
+      </div>
     </div>
   </div>
 </nav>
