@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @unit %>
+
+<div>
+  <%= link_to "Edit this unit", edit_unit_path(@unit) %> |
+  <%= link_to "Back to units", units_path %>
+  <%= link_to "Destroy", unit_path(@unit), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+</div>

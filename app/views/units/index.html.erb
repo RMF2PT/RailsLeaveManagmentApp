@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Units</h1>
+
+<table class="table table-striped table-hover">
+  <thead class="text-light bg-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Unit</th>
+      <th scope="col">Abreviatura</th>
+      <th scope="col" colspan="3" class="text-center">Ações</th>
+    </tr>
+  </thead>
+  <tbody id="units">
+    <% @units.each do |unit| %>
+      <tr>
+        <th scope="row"><%= unit.id %></th>
+        <td><%= unit.name %></td>
+        <td><%= unit.short_name %></td>
+        <td><%= link_to "Show this unit", unit %></td>
+        <td><%= link_to "Edit this unit", edit_unit_path(unit) %></td>
+        <td><%= link_to "Destroy this unit", unit_path(unit), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New unit", new_unit_path %>
