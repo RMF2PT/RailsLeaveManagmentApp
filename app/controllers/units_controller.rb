@@ -50,7 +50,7 @@ class UnitsController < ApplicationController
   # DELETE /units/1 or /units/1.json
   def destroy
     @unit.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to units_url, notice: "Unit was successfully destroyed." }
       format.json { head :no_content }

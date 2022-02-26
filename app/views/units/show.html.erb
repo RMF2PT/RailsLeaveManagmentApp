@@ -3,10 +3,8 @@
 <%= render @unit %>
 
 <div>
-  <%= link_to "Edit this unit", edit_unit_path(@unit) %> |
-  <%= link_to "Back to units", units_path %>
-  <%= link_to "Destroy", unit_path(@unit), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
+  <%= link_to "Editar", edit_unit_path(@unit), class:"btn btn-secondary"  %>
+  <%= link_to "Voltar à lista", units_path, class:"btn btn-secondary"  %>
+  <%# TODO ao apagar após a criação gera um erro pois tenta criar a lista com esta unit recentemente criada e já se apagou a mesma %>
+  <%#<%= link_to "Apagar", unit_path(@unit), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger" %>
 </div>
