@@ -3,21 +3,27 @@
 <table class="table table-striped table-hover table-bordered">
   <thead class="text-light bg-dark">
     <tr>
-      <th scope="col" class="text-center">User email</th>
-      <th scope="col" class="text-center">User name</th>
+      <th scope="col" class="text-center">Email</th>
+      <th scope="col" class="text-center">Name</th>
       <th scope="col" class="text-center">Unit</th>
       <th scope="col" class="text-center">Team</th>
-      <th scope="col" class="text-center">Férias por marcar</th>
+      <th scope="col" class="text-center">Vacations left</th>
+      <% unless (current_user.user?) %>
+      <th scope="col" class="text-center">Role</th>
+      <% end %>
     </tr>
   </thead>
   <tbody id="users">
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        <td><%# User.find(unit.user_id).name %></td>
+        <td><%= user.name %></td>
         <td><%# User.find(unit.user_id).unit_id %></td>
         <td><%# User.find(unit.user_id).team_id %></td>
         <td><%# User.find(unit.user_id).leaves %></td>
+        <% unless (current_user.user?) %>
+        <td><%= user.role %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -1,7 +1,9 @@
 <%= render @team %>
 
 <div>
+  <% unless (current_user.user?) %>
   <%= link_to "Edit this team", edit_team_path(@team), class:"btn btn-secondary" %>
+  <% end %>
   <%= link_to "Back to teams", teams_path, class:"btn btn-secondary" %>
   <%# TODO ao apagar após a criação gera um erro pois tenta criar a lista com este elemento recentemente criado e já se apagou o mesmo %>
   <%# <%= link_to "Destroy this team", team_path(@team), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger" %>
