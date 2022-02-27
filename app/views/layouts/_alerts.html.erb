@@ -1,3 +1,4 @@
+<% if false %>
 <% if notice %>
   <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <%= notice %>
@@ -9,4 +10,9 @@
     <%= alert %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
+<% end %>
+<% end %>
+
+<% flash.each do |type, msg| %>
+    <%= content_tag :div, msg, class: build_alert_classes(type) %>
 <% end %>
