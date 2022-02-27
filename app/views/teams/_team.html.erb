@@ -1,15 +1,15 @@
-<div id="<%= dom_id team %>">
-  <p>
+<div id="<%= dom_id team %>" class="card shadow-sm mb-3 rounded">
+  <p class="card-header">
     <strong>Name:</strong>
     <%= team.name %>
   </p>
 
-  <p>
+  <p class="card-body">
     <strong>Short name:</strong>
     <%= team.short_name %>
   </p>
 
-  <p>
+  <p class="card-body">
     <strong>Unit:</strong>
     <%= Unit.find(team.unit_id).short_name %>
   </p>
