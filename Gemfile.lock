@@ -91,8 +91,6 @@ GEM
       reline (>= 0.2.7)
     digest (3.1.0)
     erubi (1.10.0)
-    font-awesome-rails (4.7.0.8)
-      railties (>= 3.2, < 8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -220,7 +218,6 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
-  font-awesome-rails
   jbuilder
   jsbundling-rails
   puma (~> 5.0)
