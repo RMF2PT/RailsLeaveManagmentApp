@@ -6,7 +6,9 @@
     <div class="col-12">
       <h1 class="f0">Leave management Application</h1>
       <p class="my-3 f3 font-weight-normal">Here you can manage the attendances and absences of the people on your team.</p>
+      <% unless user_signed_in? %>
+        <%= link_to "Sign up now", new_user_registration_path, class:"btn btn-warning btn-lg shadow-lg px-3 mb-5 rounded" %>
+      <% end %>
     </div>
   </div>
 </div>
-
