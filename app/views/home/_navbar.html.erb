@@ -9,54 +9,56 @@
 
     <%# Collapse items %>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to "Units", units_path, class:"nav-link"%>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Teams", teams_path, class:"nav-link"%>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Users", users_path, class:"nav-link"%>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Calendar</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOther" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Manage
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownOther">
-            <li><a class="dropdown-item" href="#">Vacations</a></li>
-            <li><a class="dropdown-item" href="#">Local attendances</a></li>
-            <li><a class="dropdown-item" href="#">Free afternoons</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Types of dates</a></li>
-          </ul>
-        </li>
-      </ul>
-    
-      <%# Notifications %>
-      <div>
-        <li class="d-flex nav-item dropdown me-2">
-          <a
-            class="nav-link dropdown-toggle text-reset hidden-arrow"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="bi bi-bell-fill fs-5 text-light"></i>
-            <span class="badge rounded-pill badge-notification bg-danger">1</span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Vacations to aprove <span class="badge rounded-pill badge-notification bg-danger">1</span></a></li>
-            <li><a class="dropdown-item" href="#">Vacations to register <span class="badge rounded-pill badge-notification bg-danger">1</span></a></li>
-            <li><a class="dropdown-item" href="#">Absenses to aprove <span class="badge rounded-pill badge-notification bg-danger">1</span></a></li>
-          </ul>
-        </li>
-      </div>
+      <% if user_signed_in? %>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <%= link_to "Units", units_path, class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Teams", teams_path, class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Users", users_path, class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Calendar</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOther" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Manage
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownOther">
+              <li><a class="dropdown-item" href="#">Vacations</a></li>
+              <li><a class="dropdown-item" href="#">Local attendances</a></li>
+              <li><a class="dropdown-item" href="#">Free afternoons</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Types of dates</a></li>
+            </ul>
+          </li>
+        </ul>
+      
+        <%# Notifications %>
+        <div>
+          <li class="d-flex nav-item dropdown me-2">
+            <a
+              class="nav-link dropdown-toggle text-reset hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="bi bi-bell-fill fs-5 text-light"></i>
+              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Vacations to aprove <span class="badge rounded-pill badge-notification bg-danger">1</span></a></li>
+              <li><a class="dropdown-item" href="#">Vacations to register <span class="badge rounded-pill badge-notification bg-danger">1</span></a></li>
+              <li><a class="dropdown-item" href="#">Absenses to aprove <span class="badge rounded-pill badge-notification bg-danger">1</span></a></li>
+            </ul>
+          </li>
+        </div>
+      <% end %>
 
       <%# User %>
       <div>
