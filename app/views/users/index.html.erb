@@ -5,7 +5,6 @@
     <tr>
       <th scope="col" class="text-center">Email</th>
       <th scope="col" class="text-center">Name</th>
-      <th scope="col" class="text-center">Unit</th>
       <th scope="col" class="text-center">Team</th>
       <th scope="col" class="text-center">Vacations left</th>
       <% unless (current_user.user?) %>
@@ -18,11 +17,11 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.name %></td>
-        <%# TODO add unit and team to users in schema, model, controller and views %>
-        <td><%# User.find(unit.user_id).unit_id %></td>
-        <td><%# User.find(unit.user_id).team_id %></td>
+        <%# TODO add team to users in schema, model, controller and views %>
+        <%# TODO via the team I can find the unit of the user %>
+        <td><%# User.find(unit.user_id).unit_id %>.<%# User.find(unit.user_id).team_id %></td>
         <td><%# User.find(unit.user_id).leaves %></td>
-        <% unless (current_user.user?) %>
+        <% unless current_user.user? %>
         <td><%= user.role %></td>
         <% end %>
       </tr>
