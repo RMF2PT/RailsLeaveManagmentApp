@@ -14,7 +14,7 @@
         <td><%= unit.name %></td>
         <td><%= unit.short_name %></td>
         <td class="text-center"><%= link_to "Full details", unit, class:"btn btn-secondary btn-sm" %></td>
-        <% unless (current_user.user?) %>
+        <% unless current_user.user? %>
         <td class="text-center"><%= link_to "Edit", edit_unit_path(unit), class:"btn btn-secondary btn-sm" %></td>
         <td class="text-center"><%= link_to "Delete", unit_path(unit), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger btn-sm" %></td>
         <% end %>

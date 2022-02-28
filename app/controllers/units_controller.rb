@@ -1,6 +1,6 @@
 class UnitsController < ApplicationController
   before_action :set_unit, only: %i[ show edit update destroy ]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   # GET /units or /units.json
   def index
@@ -56,6 +56,10 @@ class UnitsController < ApplicationController
       format.html { redirect_to units_url, notice: "Unit was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    redirect_to units_path, alert: "You don't have access to this function." if current_user.user?
   end
 
   private

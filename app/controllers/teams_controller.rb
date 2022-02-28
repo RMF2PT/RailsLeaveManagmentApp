@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: %i[ show edit update destroy ]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
+  before_action :correct_user, only: %i[ edit update destroy ]
   
   # GET /teams or /teams.json
   def index
@@ -56,6 +57,10 @@ class TeamsController < ApplicationController
       format.html { redirect_to teams_url, notice: "Team was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    redirect_to teams_path, alert: "You don't have access to this function." if current_user.user?
   end
 
   private
