@@ -8,10 +8,11 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1 or /users/1.json
-  def show
+  def show 
   end
 
   private
+
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
