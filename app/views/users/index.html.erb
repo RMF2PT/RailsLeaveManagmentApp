@@ -18,9 +18,11 @@
         <td><%= user.email %></td>
         <td><%= user.name %></td>
         <%# TODO add team to users schema, model, controller and views %>
+        <td>
+        <%# Unit.find(user.unit_id).short_name unless user.unit.id.blank? %>.<%= Team.find(user.team_id).short_name unless user.team_id.blank? %>
+        </td>
         <%# TODO via the team I can find the unit of the user %>
-        <td><%# User.find(unit.user_id).unit_id %>.<%# User.find(unit.user_id).team_id %></td>
-        <td><%# User.find(unit.user_id).leaves %></td>
+        <td><%# user.find(unit.user_id).leaves %></td>
         <% unless current_user.user? %>
         <td><%= user.role %></td>
         <% end %>

@@ -1,6 +1,7 @@
 class Team < ApplicationRecord
   # Teams references
   belongs_to :unit
+  has_many :users
 
   # Teams validations
   validates :name, length: { in: 2..30 }, uniqueness: { case_sensitive: false }
