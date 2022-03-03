@@ -19,9 +19,8 @@
         <td><%= user.name %></td>
         <%# TODO add team to users schema, model, controller and views %>
         <td>
-        <%# Unit.find(Team.find(user.team_id).id).short_name unless user.team.id.blank? %>.<%= Team.find(user.team_id).short_name unless user.team_id.blank? %>
+        <%= Unit.find(Team.find(user.team_id).unit_id).short_name unless user.team_id.blank? %>.<%= Team.find(user.team_id).short_name unless user.team_id.blank? %>
         </td>
-        <%# TODO via the team I can find the unit of the user %>
         <td><%# user.leaves %></td>
         <% unless current_user.user? %>
         <td><%= user.role %></td>
