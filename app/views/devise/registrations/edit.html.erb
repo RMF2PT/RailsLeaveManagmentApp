@@ -20,7 +20,7 @@
 
       <div class="field mb-2">
         <%= f.label :team %>
-        <%= f.select :team_id, Team.all.collect { |team| [team.short_name, team.id ]} , { include_blank: true }, class:"form-select" %>
+        <%= f.select :team_id, Team.all.collect { |team| [Unit.find(team.unit_id).short_name + "." + team.short_name, team.id ]} , { include_blank: true }, class:"form-select" %>
       </div>
 
       <% unless (current_user.user?) %>

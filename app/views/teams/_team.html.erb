@@ -3,15 +3,12 @@
     <strong>Name:</strong>
     <%= team.name %>
   </p>
-
-  <p class="card-body">
-    <strong>Short name:</strong>
-    <%= team.short_name %>
-  </p>
-
   <p class="card-body">
     <strong>Unit:</strong>
     <%= Unit.find(team.unit_id).short_name %>
   </p>
-
+  <p class="card-body">
+    <strong>Short name:</strong>
+    <%= team.short_name %>
+  </p>
 </div>

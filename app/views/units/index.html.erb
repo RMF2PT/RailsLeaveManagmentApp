@@ -5,6 +5,7 @@
     <tr>
       <th scope="col" class="text-center">Unit</th>
       <th scope="col" class="text-center">Short name</th>
+      <th scope="col" class="text-center">Director</th>
       <th scope="col" colspan="3" class="text-center">Actions</th>
     </tr>
   </thead>
@@ -13,6 +14,7 @@
       <tr>
         <td><%= unit.name %></td>
         <td><%= unit.short_name %></td>
+        <td>DIRECTOR NAME HERE</td>
         <td class="text-center"><%= link_to "Full details", unit, class:"btn btn-secondary btn-sm" %></td>
         <% unless current_user.user? %>
         <td class="text-center"><%= link_to "Edit", edit_unit_path(unit), class:"btn btn-secondary btn-sm" %></td>

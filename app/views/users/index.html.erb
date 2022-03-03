@@ -17,7 +17,6 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.name %></td>
-        <%# TODO add team to users schema, model, controller and views %>
         <td>
         <%= Unit.find(Team.find(user.team_id).unit_id).short_name unless user.team_id.blank? %>.<%= Team.find(user.team_id).short_name unless user.team_id.blank? %>
         </td>
