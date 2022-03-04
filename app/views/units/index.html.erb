@@ -14,7 +14,7 @@
       <tr>
         <td><%= unit.name %></td>
         <td><%= unit.short_name %></td>
-        <td>DIRECTOR NAME HERE</td>
+        <td><%= unit.leader %></td>
         <td class="text-center"><%= link_to "Full details", unit, class:"btn btn-secondary btn-sm" %></td>
         <% unless current_user.role_is_user? %>
         <td class="text-center"><%= link_to "Edit", edit_unit_path(unit), class:"btn btn-secondary btn-sm" %></td>

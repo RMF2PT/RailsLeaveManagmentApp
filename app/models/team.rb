@@ -5,8 +5,8 @@ class Team < ApplicationRecord
   has_one :leader, class_name: 'User', foreign_key: 'id'
 
   # Teams validations
-  validates :name, length: { in: 2..30 }, uniqueness: { case_sensitive: false }
-  validates :short_name, length: { is: 2 }, uniqueness: { case_sensitive: false }
+  validates :name, length: { in: 2..30 }#, uniqueness: { case_sensitive: false }
+  validates :short_name, length: { is: 2 }#, uniqueness: { case_sensitive: false }
 
   # Get the team unit
   def unit
@@ -15,7 +15,7 @@ class Team < ApplicationRecord
 
   # Get the leader
   def leader
-    User.find(self.leader_id)
+    User.find(self.leader_id) unless self.leader_id.blank?
   end
 
   # Team pretty attributes

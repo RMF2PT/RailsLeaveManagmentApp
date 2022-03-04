@@ -9,6 +9,11 @@ class Unit < ApplicationRecord
   # Unit pretty attributes
   before_save :capitalize_attributes, :uppercase_attributes
 
+  def leader
+    main_team = Team.find_by(short_name: '--', unit_id: self.id)
+    User.find(main_team.leader.id).name unless main_team.blank? or main_team.leader.blank?
+  end
+
   private
 
   def capitalize_attributes

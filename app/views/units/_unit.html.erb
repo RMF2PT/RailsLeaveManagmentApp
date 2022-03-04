@@ -1,11 +1,12 @@
 <div id="<%= dom_id unit %>" class="card shadow-sm mb-3 rounded" >
-  <p class="card-header">
+  <h5 class="card-header">
     <strong>Name:</strong>
     <%= unit.name %>
-  </p>
-
-  <p class="card-body">
-    <strong>Short name:</strong>
-    <%= unit.short_name %>
-  </p>
+  </h5>
+  <div class="card-body">
+    <h5 class="card-title">Short name:</h5>
+    <p class="card-text"><%= unit.short_name %></p>
+    <h5 class="card-title">Leader:</h5>
+    <p class="card-text"><%= unit.leader %></p>
+  </div>
 </div>
