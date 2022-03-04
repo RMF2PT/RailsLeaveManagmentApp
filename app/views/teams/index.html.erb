@@ -16,7 +16,7 @@
         <td><%= team.name %></td>
         <td><%= Unit.find(team.unit_id).short_name %></td>
         <td><%= team.short_name %></td>
-        <td>LEADER NAME HERE</td>
+        <td><%= team.leader.name unless team.leader_id.blank? %></td>
         <td class="text-center"><%= link_to "Full details", team, class:"btn btn-secondary btn-sm" %></td>
         <% unless (current_user.role_is_user?) %>
         <td class="text-center"><%= link_to "Edit", edit_team_path(team), class:"btn btn-secondary btn-sm" %></td>

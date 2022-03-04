@@ -2,6 +2,7 @@ class Team < ApplicationRecord
   # Teams references
   belongs_to :unit
   has_many :users
+  has_one :leader, class_name: 'User', foreign_key: 'id'
 
   # Teams validations
   validates :name, length: { in: 2..30 }, uniqueness: { case_sensitive: false }
@@ -10,6 +11,11 @@ class Team < ApplicationRecord
   # Get the team unit
   def unit
     Unit.find(self.unit_id)
+  end
+
+  # Get the leader
+  def leader
+    User.find(self.leader_id)
   end
 
   # Team pretty attributes

@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: %i[ show edit update destroy ]
+  before_action :set_team, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  before_action :correct_user, only: %i[ edit update destroy ]
+  before_action :correct_user, only: %i[edit update destroy]
 
   # GET /teams or /teams.json
   def index
@@ -72,6 +72,6 @@ class TeamsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def team_params
-    params.require(:team).permit(:name, :short_name, :unit_id)
+    params.require(:team).permit(:name, :short_name, :unit_id, :leader_id)
   end
 end

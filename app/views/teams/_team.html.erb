@@ -1,14 +1,14 @@
 <div id="<%= dom_id team %>" class="card shadow-sm mb-3 rounded">
-  <p class="card-header">
+  <h5 class="card-header">
     <strong>Name:</strong>
     <%= team.name %>
-  </p>
-  <p class="card-body">
-    <strong>Unit:</strong>
-    <%= Unit.find(team.unit_id).short_name %>
-  </p>
-  <p class="card-body">
-    <strong>Short name:</strong>
-    <%= team.short_name %>
-  </p>
+  </h5>
+  <div class="card-body">
+    <h5 class="card-title">Unit:</h5>
+    <p class="card-text"><%= Unit.find(team.unit_id).short_name %></p>
+    <h5 class="card-title">Short name:</h5>
+    <p class="card-text"><%= team.short_name %></p>
+    <h5 class="card-title">Leader:</h5>
+    <p class="card-text"><%= team.leader.name unless team.leader_id.blank? %></p>
+  </div>
 </div>
