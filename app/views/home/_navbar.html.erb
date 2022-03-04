@@ -31,7 +31,7 @@
               <li><a class="dropdown-item" href="#">Vacations</a></li>
               <li><a class="dropdown-item" href="#">Local attendances</a></li>
               <li><a class="dropdown-item" href="#">Free afternoons</a></li>
-              <% unless (current_user.user?) %>
+              <% unless (current_user.role_is_user?) %>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Types of dates</a></li>
               <% end %>

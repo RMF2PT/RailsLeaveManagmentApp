@@ -18,7 +18,7 @@
         <td><%= team.short_name %></td>
         <td>LEADER NAME HERE</td>
         <td class="text-center"><%= link_to "Full details", team, class:"btn btn-secondary btn-sm" %></td>
-        <% unless (current_user.user?) %>
+        <% unless (current_user.role_is_user?) %>
         <td class="text-center"><%= link_to "Edit", edit_team_path(team), class:"btn btn-secondary btn-sm" %></td>
         <td class="text-center"><%= link_to "Delete", team_path(team), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger btn-sm" %></td>
         <% end %>
@@ -26,6 +26,6 @@
     <% end %>
   </tbody>
 </table>
-<% unless (current_user.user?) %>
+<% unless (current_user.role_is_user?) %>
 <%= link_to "New team", new_team_path, class:"btn btn-secondary" %>
 <% end %>

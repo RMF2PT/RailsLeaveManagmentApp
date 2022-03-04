@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :role, presence: true
 
   # List of roles available
-  enum role: %i[user diretor leader assistant]
+  enum role: %i[user director leader assistant], _prefix: :role_is
 
   # Sets the default role to user for new users
   after_initialize :set_default_role, if: :new_record?

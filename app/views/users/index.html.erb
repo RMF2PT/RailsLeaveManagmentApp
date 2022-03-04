@@ -7,7 +7,7 @@
       <th scope="col" class="text-center">Name</th>
       <th scope="col" class="text-center">Team</th>
       <th scope="col" class="text-center">Vacations left</th>
-      <% unless (current_user.user?) %>
+      <% unless (current_user.role_is_user?) %>
       <th scope="col" class="text-center">Role</th>
       <% end %>
     </tr>
@@ -21,7 +21,7 @@
         <%= Unit.find(Team.find(user.team_id).unit_id).short_name unless user.team_id.blank? %>.<%= Team.find(user.team_id).short_name unless user.team_id.blank? %>
         </td>
         <td><%# user.leaves %></td>
-        <% unless current_user.user? %>
+        <% unless current_user.role_is_user? %>
         <td><%= user.role %></td>
         <% end %>
       </tr>

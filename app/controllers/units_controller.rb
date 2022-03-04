@@ -60,7 +60,7 @@ class UnitsController < ApplicationController
   end
 
   def correct_user
-    redirect_to units_path, alert: "You don't have access to this function." if current_user.user?
+    redirect_to units_path, alert: "You don't have access to this function." if current_user.role_is_user?
   end
 
   private

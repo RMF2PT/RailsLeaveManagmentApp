@@ -1,7 +1,7 @@
 <%= render @team %>
 
 <div>
-  <% unless (current_user.user?) %>
+  <% unless (current_user.role_is_user?) %>
   <%= link_to "Edit this team", edit_team_path(@team), class:"btn btn-secondary" %>
   <% end %>
   <%= link_to "Back to teams", teams_path, class:"btn btn-secondary" %>

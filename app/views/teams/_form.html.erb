@@ -21,10 +21,20 @@
     <%= form.text_field :short_name, class:"form-control" %>
   </div>
 
-  <div>
+  <div class="mb-2">
     <%= form.label :unit_id, style: "display: block", class:"form-label" %>
     <%= form.select :unit_id, Unit.all.collect { |u| [u.short_name, u.id] }, { include_blank: true }, class:"form-select" %>
   </div>
+
+  <%# TODO create leader table has_many users %>
+  <%# TODO add users belongs_to leader %>
+  <%# TODO add team has_one leader through user %>
+  <% unless (current_user.role_is_user?) %>
+    <div class="field mb-2">
+      <%= form.label :leader %>
+      <%= form.select :leader, options_for_select(User.all.collect { |user| [user.name, user.id] unless user.role_is_user? }.compact) , { include_blank: true }, class:"form-select" %>
+    </div>
+  <% end %>
 
   <div>
     <%= form.submit class:"btn btn-success mt-2"%>

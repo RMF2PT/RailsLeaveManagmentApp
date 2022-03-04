@@ -1,7 +1,7 @@
 <%= render @unit %>
 
 <div>
-  <% unless (current_user.user?) %>
+  <% unless (current_user.role_is_user?) %>
   <%= link_to "Edit", edit_unit_path(@unit), class:"btn btn-secondary"  %>
   <% end %>
   <%= link_to "Back to list", units_path, class:"btn btn-secondary"  %>
