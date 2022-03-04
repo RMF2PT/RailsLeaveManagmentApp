@@ -7,7 +7,12 @@ class Team < ApplicationRecord
   validates :name, length: { in: 2..30 }, uniqueness: { case_sensitive: false }
   validates :short_name, length: { is: 2 }, uniqueness: { case_sensitive: false }
 
-  # Teams pretty attributes
+  # Get the team unit
+  def unit
+    Unit.find(self.unit_id)
+  end
+
+  # Team pretty attributes
   before_save :capitalize_attributes, :uppercase_attributes
 
   private

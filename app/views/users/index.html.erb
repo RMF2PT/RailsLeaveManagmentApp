@@ -18,7 +18,7 @@
         <td><%= user.email %></td>
         <td><%= user.name %></td>
         <td>
-        <%= Unit.find(Team.find(user.team_id).unit_id).short_name unless user.team_id.blank? %>.<%= Team.find(user.team_id).short_name unless user.team_id.blank? %>
+        <%= user.unit.short_name unless user.team_id.blank? %>.<%= user.team.short_name unless user.team_id.blank? %>
         </td>
         <td><%# user.leaves %></td>
         <% unless current_user.role_is_user? %>
