@@ -1,7 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 // import Rails from "@rails/ujs"
-// import 'tui-time-picker/scss/tui-time-picker.scss';
-// import "tui-calendar/scss/tui-calendar.scss";
 import Calendar from "tui-calendar";
 
 // Connects to data-controller="calendar"
@@ -52,12 +50,12 @@ export default class extends Controller {
     },
     month: {
         daynames: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-        startDayOfWeek: 0,
+        startDayOfWeek: 1,
         narrowWeekend: true
     },
     week: {
         daynames: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-        startDayOfWeek: 0,
+        startDayOfWeek: 1,
         narrowWeekend: true
     }
   });
