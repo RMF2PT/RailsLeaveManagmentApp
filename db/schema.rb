@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_04_224748) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_05_141703) do
+  create_table "schedules", force: :cascade do |t|
+    t.string "title"
+    t.integer "calendar_id"
+    t.datetime "start"
+    t.datetime "end"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "short_name"
