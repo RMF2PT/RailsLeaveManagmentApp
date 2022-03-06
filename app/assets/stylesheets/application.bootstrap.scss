@@ -1,5 +1,11 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
-@import 'tui-time-picker/scss/tui-time-picker.scss';
-@import 'tui-date-picker/scss/tui-date-picker.scss';
-@import "tui-calendar/scss/tui-calendar.scss";
+// @import url(tui-time-picker/dist/tui-time-picker.css);
+// @import url(tui-date-picker/dist/tui-date-picker.css);
+// @import url(tui-calendar/dist/tui-calendar.css);
+// @import 'vendor/tui/tui-time-picker.scss';
+// @import 'vendor/tui/tui-date-picker.scss';
+// @import 'vendor/tui/tui-calendar.scss';
+@import url(https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css);
+@import url(https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css);
+@import url(https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css);
